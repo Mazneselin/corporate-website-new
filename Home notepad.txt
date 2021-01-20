@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+</head>
+<style>
+
+.accordion {
+  background-color: #F5E1A1;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: white;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  width: 100%;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #8D8D7F;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+]
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: right;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: right;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: white;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: #333;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+header h2 {
+  text-align: center;
+}
+
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: #C68C05;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #333;
+  margin-top: 20px;
+  color: white;
+}
+
+p {
+
+    text-align: left;
+    font-size: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+ }
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+
+@keyframes example {
+  from {background-color: #E5DC51;}
+  to {background-color: #C68C05;}
+  }
+}		
+</style>
+</head>
+<body>
+
+<body onload="startTime()">
+
+<div id="txt"></div>
+
+
+<div class="header">
+  
+ <img src="Plane and Landscape Store Header (1).png" alt="Grace Ena" style="width:100%;height:fixed;">
+
+
+<div class="topnav" id="mytop">
+  <a href="Home.html">Home</a>
+  <a href="History.html">History</a>
+  <a href="Stories.html">Stories</a>
+  <a href="Our Trustee.html">Our Trustee</a>
+  <a href="Home Staff.html">Home Staff</a>
+<div class="dropdown">
+  <button class="dropbtn">Categories 
+  <i class ="fa fa-caret-down"></i>
+</button>
+  <div class="dropdown-content">
+    <a href="boyshome.html">Boys Home</a>
+    <a href="girlshome.html">Girls Home</a>
+</div>
+</div>
+  <a href="Branch.html">Branch</a>
+  <a href="Community.html">Community Learning Centre</a>
+<div class="dropdown">
+  <button class="dropbtn">We care 
+  <i class ="fa fa-caret-down"></i>
+</button>
+  <div class="dropdown-content">
+    <a href="Daycare.html">Sunbeams Day Care</a>
+    <a href="orangasli.html">Orang Asli Care</a>
+</div>
+</div>
+   <a href="event.html">Event</a>
+<div class="dropdown">
+  <button class="dropbtn">Sponsor 
+  <i class ="fa fa-caret-down"></i>
+</button>
+  <div class="dropdown-content">
+    <a href="volunteer.html">Volunteer</a>
+    <a href="alumni.html">Alumni</a>
+</div>
+</div>
+    <a href="foodprogram.html">Food Program</a>
+   <a href="Donation.html">Donation</a>
+
+</div>
+</div>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+<div class><img src="orphanage.jpg" style="width:100%;height:fixed;"></div>
+
+<video width="1250" controls>
+  <source src="Help Us, Help This Children.mp4" type="video/mp4">
+  <source src="yayasan sunbeams.video" type="video/yayasan">
+  
+</video>
+
+  <div class="footer">
+  <h3>Designed by Grace Ena, Cassandra Paul and Mazne</h3>
+  <button onclick="document.location = 'About Me.html'">About Me</button>
+  <h3><i>This website was developed for the purpose of learning HTML & CSS only.</h3>
+  <h3><i>This website is not an official website of Yayasan Sunbeams Home. To go to the official website, click on the home symbol.
+<a href="https://www.sunbeamshome.org/">
+<img src="home.jpg" alt="official website" style="width:30px;
+height:30px; border:0;"></a></h3></i><br>
+
+  	</div>
+</div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+body {
+	background-image: url(texture.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100%, 100%;
+}
+
+h1 {
+	text-align: center;
+	color: #21416A;
+	font-size: 60px;
+}
+
+blockquote {
+	text-align: center;
+	font-size: 28px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+</style>
+<body>
+
+<h1> HELLO VISITORS !</h1>
+
+<img src="welcome.gif" alt="cartoon" style="width: 100%px; height: 300px; class="center">
+
+<blockquote> We kindly remind you that this is not an official page of Yayasan Sunbeams Home.</blockquote>
+<blockquote> You can click on the picture below to go to our website.</blockquote>
+<a href = "about me.html">
+<img src = "start.png" alt = "start" style = "width: 100%px; height: 50px; border: 3;"></a>
+
+
+
+</body>
+</html>
